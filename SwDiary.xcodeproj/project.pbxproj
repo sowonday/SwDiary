@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154015C125D2477B00EDE249 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154015C025D2477B00EDE249 /* Text.swift */; };
+		154015C525D251FF00EDE249 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154015C425D251FF00EDE249 /* DiaryTableViewController.swift */; };
 		15B95EAF25D13653001D618B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B95EAE25D13653001D618B /* AppDelegate.swift */; };
 		15B95EB125D13653001D618B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B95EB025D13653001D618B /* SceneDelegate.swift */; };
-		15B95EB325D13653001D618B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B95EB225D13653001D618B /* ViewController.swift */; };
 		15B95EB625D13653001D618B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B95EB425D13653001D618B /* Main.storyboard */; };
 		15B95EB925D13653001D618B /* SwDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15B95EB725D13653001D618B /* SwDiary.xcdatamodeld */; };
 		15B95EBB25D13654001D618B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B95EBA25D13654001D618B /* Assets.xcassets */; };
@@ -17,10 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		154015C025D2477B00EDE249 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		154015C425D251FF00EDE249 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		15B95EAB25D13653001D618B /* SwDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B95EAE25D13653001D618B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15B95EB025D13653001D618B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		15B95EB225D13653001D618B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15B95EB525D13653001D618B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15B95EB825D13653001D618B /* SwDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwDiary.xcdatamodel; sourceTree = "<group>"; };
 		15B95EBA25D13654001D618B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154015BF25D246E100EDE249 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				154015C025D2477B00EDE249 /* Text.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		15B95EA225D13653001D618B = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +68,10 @@
 		15B95EAD25D13653001D618B /* SwDiary */ = {
 			isa = PBXGroup;
 			children = (
+				154015BF25D246E100EDE249 /* Text */,
 				15B95EAE25D13653001D618B /* AppDelegate.swift */,
 				15B95EB025D13653001D618B /* SceneDelegate.swift */,
-				15B95EB225D13653001D618B /* ViewController.swift */,
+				154015C425D251FF00EDE249 /* DiaryTableViewController.swift */,
 				15B95EB425D13653001D618B /* Main.storyboard */,
 				15B95EBA25D13654001D618B /* Assets.xcassets */,
 				15B95EBC25D13654001D618B /* LaunchScreen.storyboard */,
@@ -140,7 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15B95EB325D13653001D618B /* ViewController.swift in Sources */,
+				154015C525D251FF00EDE249 /* DiaryTableViewController.swift in Sources */,
+				154015C125D2477B00EDE249 /* Text.swift in Sources */,
 				15B95EAF25D13653001D618B /* AppDelegate.swift in Sources */,
 				15B95EB125D13653001D618B /* SceneDelegate.swift in Sources */,
 				15B95EB925D13653001D618B /* SwDiary.xcdatamodeld in Sources */,
