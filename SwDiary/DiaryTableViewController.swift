@@ -8,6 +8,13 @@
 import UIKit
 
 class DiaryTableViewController: UITableViewController {
+    let date: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .long
+        df.timeStyle = .medium
+        df.locale = Locale(identifier: "ko-kr")
+           return df
+       }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +41,7 @@ class DiaryTableViewController: UITableViewController {
         // Configure the cell...
         let target = Diary.dummyDiary[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = target.contentDate.description
+        cell.detailTextLabel?.text = date.string(from: target.contentDate)
         
         return cell
     }
