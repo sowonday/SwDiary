@@ -40,30 +40,12 @@
                                     <constraint firstAttribute="height" constant="332" id="jdo-AB-L32"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.02.08~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mz-ak-YbR">
-                                <rect key="frame" x="290" y="828" width="104" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="Yzs-wI-oHI"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="aS2-Ng-Sg8"/>
-                                    <constraint firstAttribute="width" constant="69" id="pe0-vS-wxm"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="zV4-kd-WCG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" systemColor="labelColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Mz-ak-YbR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="325" id="EkZ-xA-nsV"/>
                             <constraint firstItem="X5l-Ps-9OI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SLI-1s-8Qz"/>
-                            <constraint firstItem="5Mz-ak-YbR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="T8G-Pp-C4X"/>
-                            <constraint firstItem="5Mz-ak-YbR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aW6-1A-5t0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Mz-ak-YbR" secondAttribute="trailing" constant="31" id="dUN-Ta-7cM"/>
                             <constraint firstItem="X5l-Ps-9OI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="o7T-Ln-xuh"/>
-                            <constraint firstItem="5Mz-ak-YbR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="290" id="vTE-R9-DJt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Mz-ak-YbR" secondAttribute="trailing" constant="20" id="wjh-Iu-WjM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -74,9 +56,6 @@
     </scenes>
     <resources>
         <image name="journal" width="256" height="256"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
