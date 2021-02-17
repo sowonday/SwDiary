@@ -2,19 +2,21 @@
 //  DiaryTableViewController.swift
 //  SwDiary
 //
-//  Created by 김소원 on 2021/02/09.
+//  Created by 김소원 on 2021/02/17.
 //
 
 import UIKit
 
 class DiaryTableViewController: UITableViewController {
-    let date: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .long
-        df.timeStyle = .medium
-        df.locale = Locale(identifier: "ko-kr")
-           return df
-       }()
+    
+//    let date: DateFormatter = {
+//        let df = DateFormatter()
+//        df.dateStyle = .long
+//        df.timeStyle = .medium
+//        df.locale = Locale(identifier: "ko-kr")
+//           return df
+//       }()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,7 +36,6 @@ class DiaryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return Diary.dummyDiary.count
@@ -44,14 +45,12 @@ class DiaryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        // Configure the cell...
         let target = Diary.dummyDiary[indexPath.row]
-        cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = date.string(from: target.contentDate)
-        
-        return cell
-    }
-    
+       cell.textLabel?.text = target.content
+       
+       return cell
+   }
+   
 
     /*
     // Override to support conditional editing of the table view.

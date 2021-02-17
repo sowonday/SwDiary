@@ -21,24 +21,23 @@ class NewViewController: UIViewController {
     } //취소 alert
     
     
-    @IBOutlet weak var newdiary: UITextView! //새로운다이어리 변수
+    @IBOutlet weak var newdiary: UITextView!
     
-    
-        
+
     @IBAction func save(_ sender: Any) {
         guard let newtext = newdiary.text, newtext.count>0 else{
             alert()
             return
         } //다이어리 아무것도 입력하지 않았을때 경고창 기능 사용
-        
+
         let new = Diary(content: newtext)
         Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
-        
-        
-        
-        
+
+
+
+
         let savealert = UIAlertController(title: "SAVE", message: "저장됩니다.", preferredStyle: UIAlertController.Style.alert)
-        
+
       let svokaction = UIAlertAction(title: "OK", style:.default){
         (action:UIAlertAction)-> Void in self.dismiss(animated: true, completion: nil)
        }
