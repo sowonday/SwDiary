@@ -32,6 +32,8 @@ class NewViewController: UIViewController {
 
         let new = Diary(content: newtext)
         Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
+        
+        NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil)
 
         let savealert = UIAlertController(title: "SAVE", message: "저장됩니다.", preferredStyle: UIAlertController.Style.alert)
 
@@ -64,4 +66,4 @@ class NewViewController: UIViewController {
 
 extension NewViewController{
     static let newdiaryDidInsert = Notification.Name(rawValue: "newdiaryDidInsert")
-} //notificationcenter
+} //notificationcenter name 등록

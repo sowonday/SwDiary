@@ -21,11 +21,24 @@ class DiaryTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+//        tableView.reloadData()
     }
+    
+    var token: NSObjectProtocol? //token으로 observer해제
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+    }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(forName: NewViewController.newdiaryDidInsert, object: nil, queue: OperationQueue.main) {[weak self] (noti) in
+            self?.tableView.reloadData()
+        } //observer추가
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
