@@ -33,9 +33,6 @@ class NewViewController: UIViewController {
         let new = Diary(content: newtext)
         Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
 
-
-
-
         let savealert = UIAlertController(title: "SAVE", message: "저장됩니다.", preferredStyle: UIAlertController.Style.alert)
 
       let svokaction = UIAlertAction(title: "OK", style:.default){
