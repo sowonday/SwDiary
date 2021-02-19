@@ -8,11 +8,12 @@
 import Foundation
 class Diary {
     var content: String
-    
+    var datecontent: Date
  // dummydata 생성
     
     init(content:String) {
         self.content = content
+        self.datecontent = Date()
     }
 
     static var dummyDiary = [

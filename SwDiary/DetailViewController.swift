@@ -40,7 +40,10 @@ extension DetailViewController: UITableViewDataSource{
         switch indexPath.row {//표시할 셀의 종류
         case 0://첫번째 셀
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailcell", for: indexPath)
+            cell.textLabel?.text = diary?.content //데이터 받기
+            
             return cell
+            
         default:
             fatalError() //더이상 리턴할 셀이 없을 때 경고메세지
         }

@@ -9,13 +9,13 @@ import UIKit
 
 class DiaryTableViewController: UITableViewController {
     
-//    let date: DateFormatter = {
-//        let df = DateFormatter()
-//        df.dateStyle = .long
-//        df.timeStyle = .medium
-//        df.locale = Locale(identifier: "ko-kr")
-//           return df
-//       }()
+    let date: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .long
+        df.timeStyle = .medium
+        df.locale = Locale(identifier: "ko-kr")
+           return df
+       }()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +30,20 @@ class DiaryTableViewController: UITableViewController {
             NotificationCenter.default.removeObserver(token)
     }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            if let vc = segue.destination as? DetailViewController{
+                vc.diary = Diary.dummyDiary[indexPath.row]
+            } // segue로 이전 화면에 있는 메모를 보내줌
+            //segue가 연결된 화면을 생성하고 화면을 전환하기 직전에 호출
+            // indexpath로 몇번째 cell인지 계산한다
+        }
+    }
+    
+    
+    
+    
     
     
 
@@ -51,19 +65,24 @@ class DiaryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Diary.dummyDiary.count
-    }
-
+      
+            return Diary.dummyDiary.count
+    } //dummyDiary 카운트
+        
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
         let target = Diary.dummyDiary[indexPath.row]
-       cell.textLabel?.text = target.content
+        cell.textLabel?.text = target.content
+        cell.detailTextLabel?.text = date.string(for: target.datecontent)
+        
+        return cell
+        }
+        
+        
        
-       return cell
-   }
-   
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -110,4 +129,5 @@ class DiaryTableViewController: UITableViewController {
     }
     */
 
-}
+
+    }

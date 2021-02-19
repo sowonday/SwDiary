@@ -73,10 +73,10 @@
 				15B95EBC25D13654001D618B /* LaunchScreen.storyboard */,
 				15B95EBF25D13654001D618B /* Info.plist */,
 				15B95EB725D13653001D618B /* SwDiary.xcdatamodeld */,
+				1502084925DD680300187671 /* text.swift */,
+				1502084625DD5FB300187671 /* DiaryTableViewController.swift */,
 				151FD84B25DCEE8200D8B2C6 /* NewViewController.swift */,
 				151FD84E25DD10D000D8B2C6 /* NewtextAlert.swift */,
-				1502084625DD5FB300187671 /* DiaryTableViewController.swift */,
-				1502084925DD680300187671 /* text.swift */,
 				15E1AA5B25DE556200E067DA /* DetailViewController.swift */,
 			);
 			path = SwDiary;
