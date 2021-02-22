@@ -6,18 +6,18 @@
 //
 
 import Foundation
-class Diary {
-    var content: String
-    var datecontent: Date
- // dummydata 생성
-    
-    init(content:String) {
-        self.content = content
-        self.datecontent = Date()
-    }
-
-    static var dummyDiary = [
-        Diary(content: "오늘의 일기🌝"),
-        Diary(content: "내일의 계획🌞")
-]
-}
+//class Diary {
+//    var content: String
+//    var datecontent: Date
+// // dummydata 생성
+//    
+//    init(content:String) {
+//        self.content = content
+//        self.datecontent = Date()
+//    }
+//
+//    static var dummyDiary = [
+//        Diary(content: "오늘의 일기🌝"),
+//        Diary(content: "내일의 계획🌞")
+//]
+//}

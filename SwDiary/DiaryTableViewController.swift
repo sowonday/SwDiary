@@ -21,7 +21,8 @@ class DiaryTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        tableView.reloadData()
+        DataStorage.shared.fetchDiary() //배열이 데이터로 채워짐
+        tableView.reloadData() //배열에 저장된 데이터로 테이블뷰 업데이트
     }
     
     var token: NSObjectProtocol? //token으로 observer해제
@@ -34,7 +35,7 @@ class DiaryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
             if let vc = segue.destination as? DetailViewController{
-                vc.diary = Diary.dummyDiary[indexPath.row]
+                vc.diary = DataStorage.shared.diaryList[indexPath.row]
             } // segue로 이전 화면에 있는 메모를 보내줌
             //segue가 연결된 화면을 생성하고 화면을 전환하기 직전에 호출
             // indexpath로 몇번째 cell인지 계산한다
@@ -42,11 +43,6 @@ class DiaryTableViewController: UITableViewController {
     }
     
     
-    
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,14 +62,14 @@ class DiaryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
       
-            return Diary.dummyDiary.count
+        return DataStorage.shared.diaryList.count
     } //dummyDiary 카운트
         
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let target = Diary.dummyDiary[indexPath.row]
+        let target = DataStorage.shared.diaryList[indexPath.row]
         cell.textLabel?.text = target.content
         cell.detailTextLabel?.text = date.string(for: target.datecontent)
         

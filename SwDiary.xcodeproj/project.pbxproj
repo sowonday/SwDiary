@@ -18,6 +18,7 @@
 		15B95EBB25D13654001D618B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B95EBA25D13654001D618B /* Assets.xcassets */; };
 		15B95EBE25D13654001D618B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B95EBC25D13654001D618B /* LaunchScreen.storyboard */; };
 		15E1AA5C25DE556200E067DA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E1AA5B25DE556200E067DA /* DetailViewController.swift */; };
+		15F66A7025E38C3800D2E666 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F66A6F25E38C3800D2E666 /* DataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		15B95EBD25D13654001D618B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15B95EBF25D13654001D618B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E1AA5B25DE556200E067DA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		15F66A6F25E38C3800D2E666 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +68,9 @@
 		15B95EAD25D13653001D618B /* SwDiary */ = {
 			isa = PBXGroup;
 			children = (
-				15B95EAE25D13653001D618B /* AppDelegate.swift */,
+				15F66A6E25E38C2700D2E666 /* Data */,
 				15B95EB025D13653001D618B /* SceneDelegate.swift */,
+				15B95EAE25D13653001D618B /* AppDelegate.swift */,
 				15B95EB425D13653001D618B /* Main.storyboard */,
 				15B95EBA25D13654001D618B /* Assets.xcassets */,
 				15B95EBC25D13654001D618B /* LaunchScreen.storyboard */,
@@ -80,6 +83,14 @@
 				15E1AA5B25DE556200E067DA /* DetailViewController.swift */,
 			);
 			path = SwDiary;
+			sourceTree = "<group>";
+		};
+		15F66A6E25E38C2700D2E666 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				15F66A6F25E38C3800D2E666 /* DataStorage.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				15B95EB125D13653001D618B /* SceneDelegate.swift in Sources */,
 				151FD84F25DD10D000D8B2C6 /* NewtextAlert.swift in Sources */,
 				15B95EB925D13653001D618B /* SwDiary.xcdatamodeld in Sources */,
+				15F66A7025E38C3800D2E666 /* DataStorage.swift in Sources */,
 				15E1AA5C25DE556200E067DA /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

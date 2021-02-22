@@ -30,8 +30,10 @@ class NewViewController: UIViewController {
             return
         } //다이어리 아무것도 입력하지 않았을때 경고창 기능 사용
 
-        let new = Diary(content: newtext)
-        Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
+//        let new = Diary(content: newtext)
+//        Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
+        
+//        DataStorage.shared.addnewdiary(diary)
         
         NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil)
 
