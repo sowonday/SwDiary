@@ -12,7 +12,7 @@
         <!--Today❓-->
         <scene sceneID="tu0-2s-PUf">
             <objects>
-                <viewController title="Today❓" id="psW-ne-tlV" customClass="NewViewController" customModule="SwDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Today❓" modalPresentationStyle="fullScreen" id="psW-ne-tlV" customClass="NewViewController" customModule="SwDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MiI-eu-Nzn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9Wg-Kj-fA1" kind="show" id="AUO-NL-MRh"/>
+                                    <segue destination="MqI-PI-xRG" kind="show" id="SDW-jM-rLl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,65 +94,90 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sowon's Day❤️" id="6Dt-Zc-RfG">
-                        <barButtonItem key="rightBarButtonItem" image="pencil" catalog="system" style="done" id="1YI-9x-OAB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1YI-9x-OAB">
                             <connections>
-                                <segue destination="RCl-Y3-0J7" kind="presentation" modalPresentationStyle="fullScreen" id="Rbd-Ez-MKc"/>
+                                <segue destination="RCl-Y3-0J7" kind="presentation" modalPresentationStyle="pageSheet" id="Rbd-Ez-MKc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhf-3M-5Up" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="408.69565217391306" y="15.401785714285714"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="okp-jW-hpn">
+        <scene sceneID="PFp-AW-fGz">
             <objects>
-                <viewController id="9Wg-Kj-fA1" customClass="DetailViewController" customModule="SwDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ibc-Al-eIl">
+                <viewController id="MqI-PI-xRG" customClass="DetailViewController" customModule="SwDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vHj-oq-eiJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rmu-W4-9iH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxM-jB-SUc">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3e4-ae-Fei"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="compose" id="dca-Ss-uMt">
+                                        <connections>
+                                            <segue destination="RCl-Y3-0J7" kind="presentation" id="xfn-bL-lXN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pAh-wg-F8T">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailcell" id="H4e-ed-2rh">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailcell" textLabel="XBi-8L-IuY" style="IBUITableViewCellStyleDefault" id="kse-za-OYI">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H4e-ed-2rh" id="WGn-h8-MbF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kse-za-OYI" id="KwJ-H5-wRX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XBi-8L-IuY">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="9Wg-Kj-fA1" id="Lx1-kh-jXR"/>
+                                    <outlet property="dataSource" destination="MqI-PI-xRG" id="Xgn-0p-Q72"/>
+                                    <outlet property="delegate" destination="MqI-PI-xRG" id="nk5-z3-l2G"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="IQU-yB-eAD"/>
+                        <viewLayoutGuide key="safeArea" id="3Q8-1g-VRB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rmu-W4-9iH" secondAttribute="bottom" id="8uj-KU-VEq"/>
-                            <constraint firstItem="rmu-W4-9iH" firstAttribute="leading" secondItem="IQU-yB-eAD" secondAttribute="leading" id="f7w-K2-9o7"/>
-                            <constraint firstItem="rmu-W4-9iH" firstAttribute="top" secondItem="Ibc-Al-eIl" secondAttribute="top" id="qhY-cb-hgz"/>
-                            <constraint firstAttribute="trailing" secondItem="rmu-W4-9iH" secondAttribute="trailing" id="w3u-lV-l4r"/>
+                            <constraint firstItem="pAh-wg-F8T" firstAttribute="leading" secondItem="3Q8-1g-VRB" secondAttribute="leading" id="5PA-ps-2Qg"/>
+                            <constraint firstItem="SxM-jB-SUc" firstAttribute="leading" secondItem="3Q8-1g-VRB" secondAttribute="leading" id="9YT-8D-yz2"/>
+                            <constraint firstItem="pAh-wg-F8T" firstAttribute="trailing" secondItem="3Q8-1g-VRB" secondAttribute="trailing" id="DBZ-HZ-Fxn"/>
+                            <constraint firstItem="SxM-jB-SUc" firstAttribute="bottom" secondItem="3Q8-1g-VRB" secondAttribute="bottom" id="eMf-ZD-Zta"/>
+                            <constraint firstItem="SxM-jB-SUc" firstAttribute="trailing" secondItem="3Q8-1g-VRB" secondAttribute="trailing" id="nAE-a4-Zg2"/>
+                            <constraint firstItem="SxM-jB-SUc" firstAttribute="top" secondItem="pAh-wg-F8T" secondAttribute="bottom" id="ncR-io-uv7"/>
+                            <constraint firstItem="pAh-wg-F8T" firstAttribute="top" secondItem="vHj-oq-eiJ" secondAttribute="top" id="sKp-Uf-eeZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="TjY-uH-50F">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="bBP-2I-y9e"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="YRB-zr-Hne"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7p2-X1-CR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oq-ew-r9S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="14.732142857142856"/>
+            <point key="canvasLocation" x="1492.753623188406" y="22.767857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wrZ-lO-9n0">
             <objects>
                 <navigationController id="G2A-X5-6np" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a45-US-wk6">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -168,7 +193,7 @@
         <!--Today❓-->
         <scene sceneID="ome-uw-etL">
             <objects>
-                <navigationController title="Today❓" automaticallyAdjustsScrollViewInsets="NO" id="RCl-Y3-0J7" sceneMemberID="viewController">
+                <navigationController title="Today❓" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" toolbarHidden="NO" id="RCl-Y3-0J7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="VTa-4U-qh5">
                         <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
@@ -184,8 +209,10 @@
             <point key="canvasLocation" x="1077" y="-651"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xfn-bL-lXN"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
