@@ -10,6 +10,9 @@ import UIKit
 class NewViewController: UIViewController {
     
     
+    var editTatget: Diary?
+    
+    
     @IBAction func cancel(_ sender: Any) {
         		
         let cancelalert = UIAlertController(title: "CANCEL", message: "저장되지않습니다.", preferredStyle: UIAlertController.Style.alert)
@@ -25,7 +28,7 @@ class NewViewController: UIViewController {
     
 
     @IBAction func save(_ sender: Any) {
-        guard let newtext = newdiary.text, newtext.count>0 else{
+        guard let diary = newdiary.text, diary.count>0 else{
             alert()
             return
         } //다이어리 아무것도 입력하지 않았을때 경고창 기능 사용
@@ -33,7 +36,7 @@ class NewViewController: UIViewController {
 //        let new = Diary(content: newtext)
 //        Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
         
-//        DataStorage.shared.addnewdiary(diary)
+        DataStorage.shared.addnewdiary(diary)
         
         NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil)
 
@@ -50,7 +53,15 @@ class NewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let diary = editTatget{
+            navigationItem.title = "편집"
+            newdiary.text = diary.content
+            
+        }
+        else{
+            navigationItem.title = "새 메모"
+            newdiary.text = ""
+        }
     }
     
 

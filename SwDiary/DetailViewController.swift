@@ -11,6 +11,12 @@ class DetailViewController: UIViewController {
     
     
     var diary: Diary? //이전 메뉴에 있는 값 전달받기
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? NewViewController{
+            vc.editTatget = diary
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

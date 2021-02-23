@@ -18,22 +18,24 @@ class DataStorage{
         return persistentContainer.viewContext
     }// coredata에서 실행하는 대부분의 객체는 contenxt에서 실행한다.
     
-    //메모 데이터베이스에서 읽어오는 코드
-    var diaryList = [Diary]()
+   
+    var diaryList = [Diary]() //diary 빈 배열 생성
     
+    //디이어리 데이터베이스에서 읽어오는 코드
     func fetchDiary(){
         let request: NSFetchRequest<Diary> = Diary.fetchRequest()
         
         let sortByDateDesc = NSSortDescriptor(key: "datecontent", ascending: false)
-        request.sortDescriptors = [sortByDateDesc]
+        request.sortDescriptors = [sortByDateDesc] //날짜 내림차순 정렬
         
         do{
             diaryList = try mainContext.fetch(request)
         } catch {
             print(error)
-        }
+        } //do catch문으로 diary list에 데이터 입력
     }
     
+    //다이어리 쓰기
     func addnewdiary(_ diary: String?){
         let add = Diary(context: mainContext)
         add.content = diary
@@ -41,33 +43,6 @@ class DataStorage{
         
         saveContext()
     }
-    
-//    var diaryList = [Diary]() //빈배열로 초기화
-//
-//    func fetchDiary(){
-//        let request: NSFetchRequest<Diary> = Diary.fetchRequest()
-//
-//        let sortByDateDesc = NSSortDescriptor(key: "datecontent", ascending: false)
-//        request.sortDescriptors = [sortByDateDesc]
-//
-//        do {
-//            diaryList = try mainContext.fetch(request)
-//        } catch {
-//            print(error)
-//        }
-//
-//    }
-    
-//    func addnewdiary(_ diary: String?) {
-//        let add = Diary(context: mainContext)
-//        add.content = diary
-//        add.datecontent = Date()
-//        
-//        saveContext()
-//        
-//    }
-    
-    
     
     
     // MARK: - Core Data stack
