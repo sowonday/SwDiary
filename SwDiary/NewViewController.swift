@@ -36,19 +36,26 @@ class NewViewController: UIViewController {
 //        let new = Diary(content: newtext)
 //        Diary.dummyDiary.append(new) //새로운 다이어리 더미리스트에 추가입력
         
-        DataStorage.shared.addnewdiary(diary)
+        if let target = editTatget {
+            target.content = diary
+            DataStorage.shared.saveContext()
+        }
+        else{
+            DataStorage.shared.addnewdiary(diary)
+            NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil)
+        }
         
-        NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil)
-
-        let savealert = UIAlertController(title: "SAVE", message: "저장됩니다.", preferredStyle: UIAlertController.Style.alert)
+        
+      let savealert = UIAlertController(title: "SAVE", message: "저장됩니다.", preferredStyle: UIAlertController.Style.alert)
 
       let svokaction = UIAlertAction(title: "OK", style:.default){
         (action:UIAlertAction)-> Void in self.dismiss(animated: true, completion: nil)
        }
         savealert.addAction(svokaction)
-        self.present(savealert, animated: true, completion: nil)
-    } //새로운 다이어리 저장누르면 alert
     
+        self.present(savealert, animated: true, completion: nil)
+       
+    } //새로운 다이어리 저장누르면 alert
     
     override func viewDidLoad() {
         super.viewDidLoad()

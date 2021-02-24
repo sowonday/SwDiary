@@ -19,8 +19,8 @@ class DiaryTableViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
+        super.viewWillAppear(animated)
         DataStorage.shared.fetchDiary() //배열이 데이터로 채워짐
         tableView.reloadData() //배열에 저장된 데이터로 테이블뷰 업데이트
     }
@@ -29,7 +29,7 @@ class DiaryTableViewController: UITableViewController {
     deinit {
         if let token = token {
             NotificationCenter.default.removeObserver(token)
-    }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -99,7 +99,7 @@ class DiaryTableViewController: UITableViewController {
            
             let target = DataStorage.shared.diaryList[indexPath.row]
             DataStorage.shared.trashdairy(target) //데이터베이스에서 메모삭제
-            DataStorage.shared.diaryList.remove(at: indexPath.row)
+            DataStorage.shared.diaryList.remove(at: indexPath.row) //배열에서 삭제
             
             tableView.deleteRows(at: [indexPath], with: .fade) //테이블뷰에서 셀을 삭제
         } else if editingStyle == .insert {

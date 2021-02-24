@@ -40,6 +40,8 @@ class DataStorage{
         let add = Diary(context: mainContext)
         add.content = diary
         add.datecontent = Date()
+        diaryList.insert(add, at: 0)
+//        diaryList.append(<#T##newElement: Diary##Diary#>) 배열 맨뒤에 추가됨
         
         saveContext()
     }
