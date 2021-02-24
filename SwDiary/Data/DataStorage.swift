@@ -43,7 +43,13 @@ class DataStorage{
         
         saveContext()
     }
-    
+     //다이어리 삭제
+    func trashdairy(_ diary: Diary?)  {
+        if let diary = diary {
+            mainContext.delete(diary)
+            saveContext()
+        }
+    }
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
