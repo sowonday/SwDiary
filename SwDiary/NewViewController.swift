@@ -39,10 +39,11 @@ class NewViewController: UIViewController {
         if let target = editTatget {
             target.content = diary
             DataStorage.shared.saveContext()
+            NotificationCenter.default.post(name: NewViewController.eidtdiaryDidInsert, object: nil)
         }
         else{
             DataStorage.shared.addnewdiary(diary)
-            NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil)
+            NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil) //노피피케이션
         }
         
         
@@ -66,7 +67,7 @@ class NewViewController: UIViewController {
             
         }
         else{
-            navigationItem.title = "새 메모"
+            navigationItem.title = "Today❓"
             newdiary.text = ""
         }
     }
@@ -86,4 +87,5 @@ class NewViewController: UIViewController {
 
 extension NewViewController{
     static let newdiaryDidInsert = Notification.Name(rawValue: "newdiaryDidInsert")
+    static let eidtdiaryDidInsert = Notification.Name(rawValue: "editdiaryDidInsert")
 } //notificationcenter name 등록

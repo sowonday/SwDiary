@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var uptableview: UITableView!
     var diary: Diary? //이전 메뉴에 있는 값 전달받기
     
     let date: DateFormatter = {
@@ -42,11 +43,22 @@ class DetailViewController: UIViewController {
             vc.editTatget = diary
         }
     }
-
+    
+    var token : NSObjectProtocol?
+    deinit {
+        if let token = token{
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
+   
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(forName: NewViewController.eidtdiaryDidInsert, object: nil, queue: OperationQueue.main, using:{ [weak self] (noti) in
+            self?.uptableview.reloadData()
+        })
     }
     
 
