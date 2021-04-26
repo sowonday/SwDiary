@@ -40,7 +40,7 @@ class NewViewController: UIViewController {
             target.content = diary
             DataStorage.shared.saveContext()
             NotificationCenter.default.post(name: NewViewController.eidtdiaryDidInsert, object: nil)
-        }
+        } //편집 후 데이터 새롭게 저장 및 옵져버를 사용하여 알려준다
         else{
             DataStorage.shared.addnewdiary(diary)
             NotificationCenter.default.post(name: NewViewController.newdiaryDidInsert, object: nil) //노피피케이션

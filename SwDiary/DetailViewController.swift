@@ -4,7 +4,6 @@
 //
 //  Created by 김소원 on 2021/02/18.
 //
-
 import UIKit
 
 class DetailViewController: UIViewController {
@@ -22,6 +21,8 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func deleteDiary(_ sender: Any) {
+    
+        
         
         let trashalert = UIAlertController(title: "정말로 삭제하시겠습니까?", message:"삭제됩니다.", preferredStyle: UIAlertController.Style.alert)
         
@@ -33,7 +34,7 @@ class DetailViewController: UIViewController {
         }
         trashalert.addAction(trashaction)
         self.present(trashalert, animated: true, completion: nil)
-    }
+    } //삭제 기능
     
     
     

@@ -10,10 +10,10 @@ import UIKit
 class DiaryTableViewController: UITableViewController {
     
     let date: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .long
-        df.timeStyle = .medium
-        df.locale = Locale(identifier: "ko-kr")
+        let df = DateFormatter() // 날짜 변환에 관해
+        df.dateStyle = .long // 날짜
+        df.timeStyle = .medium // 시간
+        df.locale = Locale(identifier: "ko-kr") // 날짜 지역 설정
            return df
        }()
     
@@ -41,7 +41,6 @@ class DiaryTableViewController: UITableViewController {
             // indexpath로 몇번째 cell인지 계산한다
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +101,7 @@ class DiaryTableViewController: UITableViewController {
             DataStorage.shared.diaryList.remove(at: indexPath.row) //배열에서 삭제
             
             tableView.deleteRows(at: [indexPath], with: .fade) //테이블뷰에서 셀을 삭제
-        } else if editingStyle == .insert {
+        } else if editingStyle == .insert { // 편집 버튼을 누르지 않은 경우
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
